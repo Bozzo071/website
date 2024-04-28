@@ -1,9 +1,9 @@
-name: Deploy Website
+name: SSH Deploy
 
 on:
   push:
     branches:
-      - master
+      - master  # Change this to match your repository's main branch name
 
 jobs:
   deploy:
@@ -13,13 +13,13 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v2
 
-      - name: Setup SSH Agent
-        run: |
-          eval $(ssh-agent -s)
-          ssh-add - <<< "${{ secrets.DEPLOY_KEY }}"
-
-      - name: Deploy to Apache Server
-        uses: peaceiris/actions-gh-pages@v3
+      - name: SSH and run git pull
+        uses: appleboy/ssh-action@master
         with:
-          deploy_key: ${{ secrets.DEPLOY_KEY }}
-          publish_dir: /var/www/html/website
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          key: ${{ secrets.DEPLOY_KEY }}
+          port: ${{ secrets.SSH_PORT }}  # Optional: If your SSH server uses a non-standard port
+          script: |
+            cd /var/www/html/website
+            git pull
