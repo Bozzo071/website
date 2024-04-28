@@ -1,0 +1,6 @@
+# Ignore the folder named "imagens_portifolio"
+imagens_portifolio/
+
+# Ignore .jpg and .jpeg files
+*.jpg
+*.jpeg
