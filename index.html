@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lucas C. Silva</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 100vh;
+        margin: 0;
+      }
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px; /* Alterado para 20px para dispositivos de tela grandes */
+      }
+      .card {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      .card img {
+        width: 550px;
+        max-width: 100%; /* Adiciona uma largura máxima de 100% para a imagem dentro do cartão */
+        height: auto;
+      }
+      nav {
+        background-color: #ffffff;
+        text-align: center;
+        padding: 10px 0;
+      }
+      nav ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+      }
+      nav ul li {
+        display: inline-block; /* Alterado para exibir os itens do menu em linha */
+        margin: 0 10px;
+      }
+      nav ul li a {
+        font-style: italic;
+        text-decoration: none;
+        color: #333;
+        font-size: 18px;
+      }
+      nav ul li ul {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        padding: 10px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      nav ul li:hover ul {
+        display: block;
+      }
+      nav ul li ul li {
+        display: block;
+        margin: 5px 0;
+      }
+      @media screen and (max-width: 600px) {
+        .container {
+          padding: 10px; /* Alterado para 10px para dispositivos de tela pequena */
+        }
+        nav ul li {
+          display: block; /* Alterado para exibir os itens do menu em bloco */
+          margin: 10px 0; /* Alterado para 10px para espaçamento vertical */
+        }
+        nav ul li ul {
+          position: relative;
+          padding: 5px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <font size="7"><b>Lucas C. Silva</b></font>
+    <div class="container">
+      <div class="card">
+        <img src="image00032.jpeg" alt="Imagem de Lucas C. Silva" />
+      </div>
+      <nav>
+        <ul>
+          <li>
+            <a href="index.html">Gallery</a>
+            <!-- Submenu -->
+            <ul>
+              <li><a href="portifolio.html">Photography</a></li>
+              <li><a href="music.html">Music</a></li>
+            </ul>
+          </li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="social.html">Social</a></li>
+          <li><a href="resume.html">Resume</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </body>
+</html>
